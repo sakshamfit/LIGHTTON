@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────
-   VESPER — design tokens
+   LIGHTTON — design tokens
    Colour tokens are driven at runtime by the environment engine
    (src/components/env/EnvironmentProvider.tsx). Values here are
    the daylight baseline.

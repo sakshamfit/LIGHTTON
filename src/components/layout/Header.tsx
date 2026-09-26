@@ -61,7 +61,7 @@ export function Header() {
         aria-hidden
       />
       <div className="wrap relative grid h-[var(--header-h)] grid-cols-[1fr_auto_1fr] items-center">
-        <Link href="/" aria-label="Vesper — home" className="justify-self-start">
+        <Link href="/" aria-label="LIGHTTON — home" className="justify-self-start">
           <Logo />
         </Link>
 

@@ -56,7 +56,7 @@ export function Footer() {
         </nav>
       </div>
       <div className="wrap flex flex-col gap-3 border-t border-line py-6 text-fg-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="t-small">© {new Date().getFullYear()} Vesper Lighting Studio. Prototype storefront — no real orders are processed.</p>
+        <p className="t-small">© {new Date().getFullYear()} LIGHTTON Lighting Studio. Prototype storefront — no real orders are processed.</p>
         <ul className="t-caption flex gap-6">
           {["Instagram", "Pinterest", "Journal"].map((s) => (
             <li key={s}>

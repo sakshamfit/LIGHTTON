@@ -58,7 +58,7 @@ export function NavigationMenu() {
           exit={{ clipPath: "inset(0% 0% 100% 0%)", transition: { duration: 0.56, ease: EASE_CURTAIN, delay: 0.1 } }}
         >
           <div className="wrap flex h-[var(--header-h)] shrink-0 items-center justify-between">
-            <Link href="/" onClick={close} aria-label="Vesper — home">
+            <Link href="/" onClick={close} aria-label="LIGHTTON — home">
               <Logo />
             </Link>
             <button type="button" onClick={close} className="group inline-flex h-11 items-center gap-3 pl-3" aria-label="Close menu">
@@ -210,8 +210,8 @@ export function NavigationMenu() {
               <IconBag size={18} /> <span className="t-caption">Cart ({count})</span>
             </button>
             <DayNightToggle />
-            <a href="mailto:studio@vesper.example" className="t-caption ml-auto hidden text-fg-3 sm:inline">
-              studio@vesper.example
+            <a href="mailto:studio@lightton.example" className="t-caption ml-auto hidden text-fg-3 sm:inline">
+              studio@lightton.example
             </a>
           </motion.div>
         </motion.div>

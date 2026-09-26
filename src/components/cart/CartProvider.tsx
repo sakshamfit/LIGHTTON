@@ -5,7 +5,7 @@ import { createStore, hydratedStore, readStorage, writeStorage } from "@/lib/sto
 import { productBySlug } from "@/lib/products";
 import type { CartLine, Finish, Product, SizeOption } from "@/lib/types";
 
-const KEY = "vesper.cart.v1";
+const KEY = "lightton.cart.v1";
 
 export interface ResolvedLine extends CartLine {
   product: Product;

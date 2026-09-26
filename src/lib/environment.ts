@@ -168,7 +168,7 @@ export const TIMELINE = {
   reducedMotion: 600,
 } as const;
 
-export const STORAGE_KEY = "vesper.mode";
+export const STORAGE_KEY = "lightton.mode";
 
 /** Serialised into the document head so a stored night mode paints before hydration. */
 export function preloadScript() {

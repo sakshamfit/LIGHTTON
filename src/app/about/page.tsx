@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Vesper is a small lighting studio designing fixtures for the day they hang in and the night they create.",
+  description: "LIGHTTON is a small lighting studio designing fixtures for the day they hang in and the night they create.",
 };
 
 const PRINCIPLES = [
@@ -46,7 +46,7 @@ export default function AboutPage() {
           </p>
           <div className="lg:col-span-8" data-reveal>
             <p className="t-h2 max-w-[20em]">
-              Vesper began in 2016 in a small Lisbon workshop, with a single question: why do lamps look so different at noon and at nine?
+              LIGHTTON began in 2016 in a small Lisbon workshop, with a single question: why do lamps look so different at noon and at nine?
             </p>
             <div className="mt-10 grid gap-8 md:grid-cols-2">
               <p className="t-body">

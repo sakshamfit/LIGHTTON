@@ -44,7 +44,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "2.4 kg (M)" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "vessel-pendant",
@@ -108,7 +108,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "1.6 kg (L)" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "arc-shade",
@@ -140,7 +140,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "2.1 kg (Ø 60)" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "cage-globe",
@@ -200,7 +200,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "2.9 kg" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "knot-pendant",
@@ -228,7 +228,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "1.1 kg" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "cone-glass-pendant",
@@ -256,7 +256,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "1.2 kg" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "halo-ring",
@@ -318,7 +318,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "2.2 kg (Ø 45)" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "cap-table-lamp",
@@ -350,7 +350,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "2.3 kg (M)" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "orb-table-lamp",
@@ -409,7 +409,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "8.4 kg" },
     ],
     leadTime: "Ships in 1–2 weeks",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "tripod-floor-lamp",
@@ -437,7 +437,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "6.2 kg" },
     ],
     leadTime: "Made to order · 3 weeks",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "swing-sconce",
@@ -493,7 +493,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "1.3 kg" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "pier-bollard",
@@ -524,7 +524,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "4.6 kg (H 80)" },
     ],
     leadTime: "Ships in 1–2 weeks",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "harbour-lantern",
@@ -552,7 +552,7 @@ export const PRODUCTS: Product[] = [
       { label: "Weight", value: "2.1 kg" },
     ],
     leadTime: "Ships in 3–5 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "globe-filament",
@@ -580,7 +580,7 @@ export const PRODUCTS: Product[] = [
       { label: "Pendant set", value: "Cable sold separately" },
     ],
     leadTime: "Ships in 1–2 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
   {
     slug: "edison-st64",
@@ -608,7 +608,7 @@ export const PRODUCTS: Product[] = [
       { label: "CRI", value: "> 90" },
     ],
     leadTime: "Ships in 1–2 working days",
-    designer: "Studio Vesper",
+    designer: "LIGHTTON Studio",
   },
 ];
 

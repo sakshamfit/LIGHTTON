@@ -20,7 +20,7 @@ export default function ContactPage() {
           <div>
             <p className="t-caption text-fg-3">Showroom</p>
             <address className="t-lead mt-4 not-italic">
-              Vesper Lighting Studio
+              LIGHTTON Lighting Studio
               <br />
               Rua das Janelas Verdes 28
               <br />
@@ -31,8 +31,8 @@ export default function ContactPage() {
           <div>
             <p className="t-caption text-fg-3">Studio</p>
             <p className="mt-4 space-y-1">
-              <a href="mailto:studio@vesper.example" className="u-link block w-fit">
-                studio@vesper.example
+              <a href="mailto:studio@lightton.example" className="u-link block w-fit">
+                studio@lightton.example
               </a>
               <a href="tel:+351210000000" className="u-link block w-fit">
                 +351 21 000 0000

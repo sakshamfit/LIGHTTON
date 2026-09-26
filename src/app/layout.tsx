@@ -28,7 +28,7 @@ const barlow = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: { default: "Vesper — Architectural Lighting", template: "%s — Vesper" },
+  title: { default: "LIGHTTON — Architectural Lighting", template: "%s — LIGHTTON" },
   description:
     "Suspended, standing and wall lighting in brass, glass, oak and enamel. Designed for the day it hangs in and the night it creates.",
 };

@@ -39,4 +39,4 @@ The site is fully static-prerendered and needs no environment variables.
 
 ---
 
-Cloned from [gireeshkumarreddy/wall-lights](https://github.com/gireeshkumarreddy/wall-lights) (upstream project name: Vesper).
+Upstream: [gireeshkumarreddy/wall-lights](https://github.com/gireeshkumarreddy/wall-lights) — cloned and rebranded to **LIGHTTON**.

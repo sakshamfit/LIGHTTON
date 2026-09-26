@@ -3,7 +3,7 @@ export function Logo({ className = "" }: { className?: string }) {
   return (
     <span className={`inline-flex items-start gap-[0.18em] ${className}`}>
       <span className="font-display text-[clamp(21px,1.5vw,30px)] font-semibold uppercase leading-none tracking-[0.06em]">
-        Vesper
+        LIGHTTON
       </span>
       <span
         aria-hidden

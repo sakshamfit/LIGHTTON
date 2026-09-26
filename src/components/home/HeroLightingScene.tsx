@@ -55,8 +55,8 @@ const UNITS: Unit[] = [
 
 // First read marks the hero as seen for the rest of the session.
 const heroSeen = createStore<boolean | null>(() => {
-  const seen = !!readStorage("vesper.hero", "session");
-  writeStorage("vesper.hero", "1", "session");
+  const seen = !!readStorage("lightton.hero", "session");
+  writeStorage("lightton.hero", "1", "session");
   return seen;
 });
 
@@ -112,10 +112,10 @@ export function HeroLightingScene() {
       >
         <motion.p
           {...fade(0.1, 0)}
-          className="t-display whitespace-nowrap text-center text-[34vw] leading-none md:text-[25vw]"
+          className="t-display whitespace-nowrap text-center text-[26vw] leading-none md:text-[19vw]"
           style={{ color: "var(--watermark)" }}
         >
-          Vesper Vesper
+          LIGHTTON LIGHTTON
         </motion.p>
       </motion.div>
 
@@ -170,8 +170,8 @@ export function HeroLightingScene() {
       {/* Wordmark + intro */}
       <div className="wrap pointer-events-none relative z-[3] flex h-full flex-col justify-end pb-[max(9vh,56px)] md:justify-center md:pb-0">
         <div className="pointer-events-auto md:ml-[53%] md:mt-[6vh] xl:ml-[57%]">
-          <motion.h1 id="hero-title" {...fade(0.18)} className="t-display text-[clamp(4.2rem,17vw,6rem)] md:text-[clamp(5rem,8.4vw,13rem)]">
-            Vesper
+          <motion.h1 id="hero-title" {...fade(0.18)} className="t-display text-[clamp(3.4rem,13.5vw,4.9rem)] md:text-[clamp(4rem,6.6vw,10rem)]">
+            LIGHTTON
           </motion.h1>
           <motion.p {...fade(0.3)} className="t-caption mt-3 text-fg-2 md:mt-4">
             Architectural Light · Collection 2026

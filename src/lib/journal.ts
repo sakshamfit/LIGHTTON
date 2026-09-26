@@ -15,7 +15,7 @@ export const JOURNAL: JournalEntry[] = [
       { type: "p", text: "We design for both. In the studio, every prototype is reviewed at noon and again at nine in the evening, in the same room, from the same chair." },
       { type: "h", text: "Two lives, one object" },
       { type: "p", text: "By day, we look for proportion and material honesty: does the shade sit well under the ceiling, does the oak read as oak? By night, the questions change. Where does the light fall? Is the source visible, and should it be? Does the interior of the shade glow, or does it disappear?" },
-      { type: "quote", text: "The best fixtures are quiet at noon and generous at night.", by: "Studio Vesper" },
+      { type: "quote", text: "The best fixtures are quiet at noon and generous at night.", by: "LIGHTTON Studio" },
       { type: "p", text: "It is why so many of our shades are dark outside and warm inside. The exterior belongs to the day; the interior belongs to the evening." },
     ],
   },
@@ -68,7 +68,7 @@ export const JOURNAL: JournalEntry[] = [
     body: [
       { type: "p", text: "Ines Aldana draws every piece in a single continuous line before it is ever modelled. If the line breaks, the lamp is wrong." },
       { type: "quote", text: "I want the light to be the point of the pen.", by: "Ines Aldana" },
-      { type: "p", text: "Her Meridian collection for Vesper — a wire globe, a floating oak ring, an articulated brass arm — is built from the fewest possible parts. Each one is made to order and signed on the canopy." },
+      { type: "p", text: "Her Meridian collection for LIGHTTON — a wire globe, a floating oak ring, an articulated brass arm — is built from the fewest possible parts. Each one is made to order and signed on the canopy." },
       { type: "h", text: "Shadows as part of the design" },
       { type: "p", text: "The Cage Globe was tuned for its shadow as much as its silhouette. Twenty-two wires cast a fine meridian pattern across the ceiling at night, turning the room itself into part of the fixture." },
     ],
