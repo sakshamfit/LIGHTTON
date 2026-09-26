@@ -1,0 +1,78 @@
+import type { JournalEntry } from "./types";
+
+export const JOURNAL: JournalEntry[] = [
+  {
+    slug: "the-hour-after-sunset",
+    title: "The hour after sunset",
+    kicker: "Light & Time",
+    date: "2026-09-02",
+    readTime: "6 min",
+    excerpt: "Why we design every fixture twice — once for the day it hangs in, once for the night it creates.",
+    art: ["vessel", "arc", "cloche"],
+    products: ["vessel-pendant", "arc-shade", "cloche-pendant"],
+    body: [
+      { type: "p", text: "A lamp spends most of its life switched off. It hangs in daylight as an object — a silhouette against a wall, a line across a window. Then, for a few hours each evening, it becomes something else entirely: the source that decides how a room feels." },
+      { type: "p", text: "We design for both. In the studio, every prototype is reviewed at noon and again at nine in the evening, in the same room, from the same chair." },
+      { type: "h", text: "Two lives, one object" },
+      { type: "p", text: "By day, we look for proportion and material honesty: does the shade sit well under the ceiling, does the oak read as oak? By night, the questions change. Where does the light fall? Is the source visible, and should it be? Does the interior of the shade glow, or does it disappear?" },
+      { type: "quote", text: "The best fixtures are quiet at noon and generous at night.", by: "Studio Vesper" },
+      { type: "p", text: "It is why so many of our shades are dark outside and warm inside. The exterior belongs to the day; the interior belongs to the evening." },
+    ],
+  },
+  {
+    slug: "hanging-heights",
+    title: "How low should a pendant hang?",
+    kicker: "Guide",
+    date: "2026-08-14",
+    readTime: "4 min",
+    excerpt: "A short, practical guide to drop heights over tables, islands and stairwells.",
+    art: ["ora", "ora", "ora"],
+    products: ["ora-pendant", "arc-shade", "cone-glass-pendant"],
+    body: [
+      { type: "p", text: "Over a dining table, the underside of a pendant should sit 70 to 80 cm above the tabletop. Low enough to create an intimate pool of light; high enough to see the person opposite." },
+      { type: "h", text: "Over an island" },
+      { type: "p", text: "Kitchen islands sit higher than tables, so hang pendants 75 to 90 cm above the worktop. Use two or three smaller fixtures rather than one large one, spaced about 70 cm apart." },
+      { type: "h", text: "In a stairwell" },
+      { type: "p", text: "Stairwells reward drama. A long drop — even three or four metres — turns a single fixture into an architectural line. Keep the lowest point at least 210 cm above any step." },
+      { type: "quote", text: "Measure from the table, not from the ceiling.", by: "Installation notes" },
+    ],
+  },
+  {
+    slug: "glass-in-three-states",
+    title: "Glass in three states",
+    kicker: "Materials",
+    date: "2026-07-21",
+    readTime: "5 min",
+    excerpt: "Clear, opal and amber: a visit to the glassworks behind the Clarion collection.",
+    art: ["orb", "cloche", "globe"],
+    products: ["orb-table-lamp", "cloche-pendant", "globe-filament"],
+    body: [
+      { type: "p", text: "The glassworks sits at the edge of a forest in northern Bohemia. The furnaces have not gone cold in forty years." },
+      { type: "p", text: "Clear glass reveals the source. It is honest and a little theatrical — you see the filament, the socket, the whole mechanism of light." },
+      { type: "h", text: "Opal" },
+      { type: "p", text: "Opal hides the source entirely. A thin layer of white glass is cased inside a clear gather, so the surface stays glossy while the light becomes a soft, even glow." },
+      { type: "h", text: "Amber" },
+      { type: "p", text: "Amber warms. A trace of iron and sulphur in the batch gives the glass its colour, pulling even a cool source toward candlelight." },
+      { type: "quote", text: "Every mould here is still carved from beechwood — and burns a little with every piece.", by: "Master glassblower" },
+    ],
+  },
+  {
+    slug: "a-drawing-in-space",
+    title: "A drawing in space",
+    kicker: "Designer",
+    date: "2026-06-30",
+    readTime: "7 min",
+    excerpt: "Ines Aldana on wire, rings, and why a lamp should look like a line.",
+    art: ["cage", "halo", "swing"],
+    products: ["cage-globe", "halo-ring", "swing-sconce"],
+    body: [
+      { type: "p", text: "Ines Aldana draws every piece in a single continuous line before it is ever modelled. If the line breaks, the lamp is wrong." },
+      { type: "quote", text: "I want the light to be the point of the pen.", by: "Ines Aldana" },
+      { type: "p", text: "Her Meridian collection for Vesper — a wire globe, a floating oak ring, an articulated brass arm — is built from the fewest possible parts. Each one is made to order and signed on the canopy." },
+      { type: "h", text: "Shadows as part of the design" },
+      { type: "p", text: "The Cage Globe was tuned for its shadow as much as its silhouette. Twenty-two wires cast a fine meridian pattern across the ceiling at night, turning the room itself into part of the fixture." },
+    ],
+  },
+];
+
+export const journalBySlug = (slug: string) => JOURNAL.find((j) => j.slug === slug);

@@ -1,0 +1,506 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   VESPER — design tokens
+   Colour tokens are driven at runtime by the environment engine
+   (src/components/env/EnvironmentProvider.tsx). Values here are
+   the daylight baseline.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* colour — environment */
+  --bg: rgba(246, 248, 250, 1);
+  --bg-2: rgba(228, 236, 244, 1);
+  --surface: rgba(238, 241, 244, 1);
+  --panel: rgba(255, 255, 255, 1);
+  --fg: rgba(22, 23, 25, 1);
+  --fg-2: rgba(86, 92, 100, 1);
+  --fg-3: rgba(132, 138, 146, 1);
+  --line: rgba(22, 23, 25, 0.12);
+  --line-strong: rgba(22, 23, 25, 0.8);
+  --inv: rgba(14, 14, 15, 1);
+  --inv-fg: rgba(255, 255, 255, 1);
+  --cable: rgba(24, 24, 26, 1);
+  --horizon: rgba(255, 255, 255, 0);
+  --sky: rgba(214, 226, 238, 1);
+  --watermark: rgba(22, 40, 70, 0.045);
+
+  /* colour — light (constant) */
+  --warm: #ffc98a;
+  --warm-hot: #fff3dc;
+  --glow: rgba(255, 184, 108, 0.55);
+
+  /* light channels, 0..1 — `-g` values are written by the engine */
+  --env: 0;
+  --lamp-g: 0;
+  --ambient-g: 0;
+  --lamp: var(--lamp-g);
+  --ambient: var(--ambient-g);
+
+  /* spacing */
+  --gutter: clamp(20px, 4.4vw, 88px);
+  --section: clamp(88px, 11vw, 220px);
+  --gap: clamp(10px, 1.1vw, 20px);
+  --header-h: clamp(64px, 5.6vw, 92px);
+  --max: 2400px;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --d-micro: 180ms;
+  --d-ui: 360ms;
+  --d-comp: 620ms;
+  --d-hero: 1250ms;
+  --d-ambient: 1600ms;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-fg-3: var(--fg-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-inv: var(--inv);
+  --color-inv-fg: var(--inv-fg);
+  --color-warm: var(--warm);
+
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-barlow-condensed), var(--font-inter-tight), sans-serif;
+
+  --ease-out: var(--ease-out);
+  --ease-soft: var(--ease-soft);
+  --ease-inout: var(--ease-inout);
+}
+
+@layer base {
+/* ─── base ─────────────────────────────────────────────────── */
+html {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-gutter: stable;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+body {
+  /* background stays on <html> so the fixed atmosphere layer can sit beneath content */
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 0.34vw + 13.6px, 19px);
+  line-height: 1.55;
+  font-weight: 400;
+  overflow-x: clip;
+}
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+:focus-visible {
+  outline: 1.5px solid var(--fg);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+button {
+  cursor: pointer;
+}
+img,
+svg {
+  display: block;
+}
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+}
+
+@layer components {
+/* ─── layout ───────────────────────────────────────────────── */
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section {
+  padding-block: var(--section);
+}
+
+/* ─── typography ───────────────────────────────────────────── */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.86;
+}
+.t-hero {
+  font-weight: 300;
+  font-size: clamp(2.9rem, 6.2vw, 9.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+.t-h1 {
+  font-weight: 300;
+  font-size: clamp(2.4rem, 4.6vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.t-h2 {
+  font-weight: 300;
+  font-size: clamp(1.9rem, 3vw, 4.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+}
+.t-h3 {
+  font-weight: 400;
+  font-size: clamp(1.2rem, 1.35vw, 1.9rem);
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+}
+.t-lead {
+  font-weight: 300;
+  font-size: clamp(1.1rem, 1.2vw, 1.6rem);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+}
+.t-body {
+  color: var(--fg-2);
+  line-height: 1.65;
+}
+.t-small {
+  font-size: 0.86em;
+  line-height: 1.55;
+}
+.t-caption {
+  font-size: clamp(10.5px, 0.2vw + 9.8px, 13px);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.t-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── controls ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  min-height: 48px;
+  padding: 0 1.9em;
+  font-size: clamp(13px, 0.2vw + 12.3px, 16px);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  transition:
+    background-color var(--d-micro) var(--ease-out),
+    color var(--d-micro) var(--ease-out),
+    border-color var(--d-micro) var(--ease-out),
+    opacity var(--d-micro) var(--ease-out);
+  white-space: nowrap;
+  user-select: none;
+}
+.btn-solid {
+  background: var(--inv);
+  color: var(--inv-fg);
+}
+.btn-solid:hover {
+  background: color-mix(in srgb, var(--inv) 82%, var(--bg));
+}
+.btn-outline {
+  border-color: var(--line-strong);
+  color: var(--fg);
+}
+.btn-outline:hover {
+  background: var(--inv);
+  color: var(--inv-fg);
+  border-color: var(--inv);
+}
+.btn-quiet {
+  background: var(--surface);
+  color: var(--fg);
+}
+.btn-quiet:hover {
+  background: color-mix(in srgb, var(--surface) 80%, var(--fg));
+}
+.btn:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.btn-sm {
+  min-height: 36px;
+  padding: 0 1.2em;
+  font-size: 12px;
+}
+
+.u-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 240ms var(--ease-out);
+  padding-bottom: 2px;
+}
+.u-link:hover,
+.u-link[aria-current="page"] {
+  background-size: 100% 1px;
+}
+
+.field {
+  width: 100%;
+  min-height: 52px;
+  padding: 1.35em 0 0.45em;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  outline: none;
+  transition: border-color var(--d-micro) var(--ease-out);
+}
+.field:focus {
+  border-bottom-color: var(--fg);
+}
+.field[aria-invalid="true"] {
+  border-bottom-color: #b4442f;
+}
+
+}
+
+/* ─── light channels (used inside lamp SVGs) ───────────────── */
+.l-on {
+  opacity: var(--lamp);
+}
+.l-off {
+  opacity: calc(1 - var(--lamp));
+}
+.l-amb {
+  opacity: var(--ambient);
+}
+.l-amb-soft {
+  opacity: calc(var(--ambient) * 0.6);
+}
+.l-grow {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(calc(0.55 + var(--ambient) * 0.45));
+}
+.lit {
+  --lamp: 1;
+  --ambient: 1;
+}
+
+/* Film grain — dithers large glows and dark gradients so they stay clean on 4K panels. */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+  opacity: calc(0.018 + var(--env) * 0.03);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+/* ─── scroll reveal ────────────────────────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity 640ms var(--ease-out),
+    transform 720ms var(--ease-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal="fade"] {
+  transform: none;
+}
+[data-reveal="scale"] {
+  transform: scale(0.985);
+}
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── page transitions (React <ViewTransition>) ────────────── */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(.page) {
+  animation: 260ms var(--ease-in) both vt-out;
+}
+::view-transition-new(.page) {
+  animation: 560ms var(--ease-soft) 160ms both vt-in;
+}
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+::view-transition-group(.morph) {
+  animation-duration: 640ms;
+  animation-timing-function: var(--ease-soft);
+}
+::view-transition-image-pair(.morph) {
+  isolation: isolate;
+}
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+/* ─── utilities ────────────────────────────────────────────── */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hairline {
+  height: 1px;
+  background: var(--line);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 300;
+  transform: translateY(-160%);
+  transition: transform var(--d-micro) var(--ease-out);
+}
+.skip-link:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* ─── registered light channels (allow smooth local transitions) ── */
+@property --lamp {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --ambient {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+/* Dusk atmosphere: horizon warmth that rises behind content as daylight fades. */
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to top, var(--horizon), transparent 70%);
+}
+
+/* Menu preview fixtures glow softly even by day. */
+.menu-preview {
+  --lamp: max(var(--lamp-g), 0.85);
+  --ambient: max(var(--ambient-g), 0.35);
+}
+
+/* ─── hero ─────────────────────────────────────────────────── */
+.hero-scene {
+  --hero-lamp: 0;
+  --hero-amb: 0;
+  --lamp: max(var(--lamp-g), calc(var(--hero-lamp) * 0.92));
+  --ambient: max(var(--ambient-g), calc(var(--hero-amb) * 0.14));
+}
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0.22deg);
+  }
+  25%,
+  75% {
+    transform: rotate(-0.12deg);
+  }
+}
+.hero-sway {
+  transform-origin: 50% 0%;
+  animation: sway 9s ease-in-out infinite both;
+}
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+.hero-scroll > span {
+  animation: scroll-cue 2.4s var(--ease-inout) infinite;
+}
+
+/* Individually switchable fixtures */
+.switch-lamp {
+  transition:
+    --lamp 1.2s var(--ease-inout),
+    --ambient 1.6s var(--ease-out);
+}
