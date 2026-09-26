@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow_Condensed, Inter_Tight } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { CartProvider } from "@/components/cart/CartProvider";
@@ -14,17 +14,25 @@ import { RevealObserver } from "@/components/ui/RevealObserver";
 import { preloadScript } from "@/lib/environment";
 import "./globals.css";
 
-const inter = Inter_Tight({
+/**
+ * Fonts are self-hosted (src/fonts) instead of fetched from Google at build
+ * time, so the build works offline and behind proxies. Sources: @fontsource.
+ */
+const inter = localFont({
+  src: "../fonts/inter-tight-latin-wght-normal.woff2",
   variable: "--font-inter-tight",
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: "100 900",
   display: "swap",
+  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
 });
-const barlow = Barlow_Condensed({
+const barlow = localFont({
+  src: [
+    { path: "../fonts/barlow-condensed-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/barlow-condensed-latin-600-normal.woff2", weight: "600", style: "normal" },
+  ],
   variable: "--font-barlow-condensed",
-  subsets: ["latin"],
-  weight: ["500", "600"],
   display: "swap",
+  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -34,17 +42,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f6f8fa",
+  themeColor: "#111112",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${inter.variable} ${barlow.variable}`} data-mode="day" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${barlow.variable}`} data-mode="night" suppressHydrationWarning>
       {/* Extensions (e.g. Grammarly) inject attributes on <body> before hydration. */}
       <body className="grain flex min-h-dvh flex-col" suppressHydrationWarning>
-        {/* Paints a stored night mode before first frame — no daylight flash. */}
+        {/* Paints night before the first frame — no daylight flash. */}
         <Script id="env-preload" strategy="beforeInteractive">
           {preloadScript()}
         </Script>

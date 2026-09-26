@@ -170,11 +170,14 @@ export const TIMELINE = {
 
 export const STORAGE_KEY = "lightton.mode";
 
-/** Serialised into the document head so a stored night mode paints before hydration. */
+/** Serialised into the document head so the resting mode paints before hydration. */
 export function preloadScript() {
-  const night = tokensAt(1);
-  const decl = Object.entries(night)
-    .map(([k, v]) => `s.setProperty('--${k}','${v}');`)
-    .join("");
-  return `try{if(localStorage.getItem('${STORAGE_KEY}')==='night'){var d=document.documentElement,s=d.style;d.dataset.mode='night';${decl}s.setProperty('--lamp-g','1');s.setProperty('--ambient-g','1');s.setProperty('--env','1');}}catch(e){}`;
+  const decls = (progress: number) =>
+    Object.entries(tokensAt(progress))
+      .map(([k, v]) => `s.setProperty('--${k}','${v}');`)
+      .join("");
+  const channels = (v: string) =>
+    `s.setProperty('--lamp-g','${v}');s.setProperty('--ambient-g','${v}');s.setProperty('--env','${v}');`;
+  // Night is the default: paint it unless the visitor explicitly chose day.
+  return `try{var m=null;try{m=localStorage.getItem('${STORAGE_KEY}')}catch(e){}var d=document.documentElement,s=d.style;if(m==='day'){d.dataset.mode='day';${decls(0)}${channels("0")}}else{d.dataset.mode='night';${decls(1)}${channels("1")}}}catch(e){}`;
 }

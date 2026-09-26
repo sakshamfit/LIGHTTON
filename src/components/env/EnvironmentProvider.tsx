@@ -36,16 +36,17 @@ interface Channel {
   ease: (t: number) => number;
 }
 
-const modeStore = createStore<Mode>(() => (readStorage(STORAGE_KEY) === "night" ? "night" : "day"));
+/** Night is the default; only an explicit stored "day" opens in daylight. */
+const modeStore = createStore<Mode>(() => (readStorage(STORAGE_KEY) === "day" ? "day" : "night"));
 
 export function EnvironmentProvider({ children }: { children: ReactNode }) {
-  const mode = useSyncExternalStore(modeStore.subscribe, modeStore.get, () => "day" as Mode);
-  const [phase, setPhase] = useState<PhaseName>("Day");
+  const mode = useSyncExternalStore(modeStore.subscribe, modeStore.get, () => "night" as Mode);
+  const [phase, setPhase] = useState<PhaseName>("Night");
   const [transitioning, setTransitioning] = useState(false);
 
   const cur = useRef({ env: 0, lamp: 0, ambient: 0 });
   const raf = useRef(0);
-  const phaseRef = useRef<PhaseName>("Day");
+  const phaseRef = useRef<PhaseName>("Night");
 
   const apply = useCallback((env: number, lamp: number, ambient: number) => {
     cur.current = { env, lamp, ambient };
